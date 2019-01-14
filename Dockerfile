@@ -1,5 +1,4 @@
-# FROM mdstudio/cerise:0.2.0
-FROM cerise
+FROM mdstudio/cerise:0.2.1
 
 COPY api /home/cerise/api
 RUN chown -R cerise:cerise /home/cerise/api && \
