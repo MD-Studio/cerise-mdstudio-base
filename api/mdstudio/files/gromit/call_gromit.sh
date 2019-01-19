@@ -15,5 +15,4 @@ source $CERISE_PROJECT_FILES/miniconda/bin/activate root
 GROMIT="$CERISE_PROJECT_FILES/gromit/gromit_mpi.sh"
 
 # perform a normal MD protein-ligand simulation
-echo "Calling gromit at $GROMIT with -gmxrc $GMXRC_MDSTUDIO" >~/debug.txt
 $GROMIT -gmxrc $GMXRC_MDSTUDIO -np 8 -vsite -lie -l $LIGAND_PDB,$LIGAND_TOP $*
