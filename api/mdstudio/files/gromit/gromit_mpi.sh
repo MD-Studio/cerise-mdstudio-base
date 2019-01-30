@@ -2855,8 +2855,8 @@ do
 
     # Specify temperature for each group (Solute/Solvent/Membrane)
     # Note that this (re)sets the master temperature control
-    __mdp_md__ref_t=$($SED 's/ /,/g' <<< $(for i in ${CoupleGroups[@]}; do echo $T;   done))
-    __mdp_md__tau_t=$($SED 's/ /,/g' <<< $(for i in ${CoupleGroups[@]}; do echo $tau; done))
+    __mdp_md__ref_t=$( (for i in ${CoupleGroups[@]}; do echo -n ",$T"; done) | $SED 's/,//')
+    __mdp_md__tau_t=$( (for i in ${CoupleGroups[@]}; do echo -n ",$tau"; done) | $SED 's/,//')
 
     if [[ $STEP == $NOW ]]
     then
